@@ -1,6 +1,8 @@
 let recipeReducer = function(recipes = [], action){
-  console.log('here i am')
-  return
+  switch(action.type) {
+    default:
+      return recipes
+  }
 }
 
 export default recipeReducer
