@@ -5,10 +5,12 @@
 // const Posts = new Firebase("https://reactrecipes-2381a.firebaseio.com/")
 
 let actions = {
-  addRecipe: (text) => {
+  addRecipe: (title, descript, ingred) => {
     return {
       type: 'ADD_RECIPE',
-      text: text
+      title: title,
+      descript: descript,
+      ingred: ingred
     }
   }
 }

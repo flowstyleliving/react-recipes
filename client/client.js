@@ -11,8 +11,8 @@ let initialState = {
     id: 0,
     pic: 'pic goes here',
     title: 'Omelette',
-    text: 'Breakfast classic',
-    ingredients: ['Eggs', 'Vegan Butter']
+    descript: 'Breakfast classic',
+    ingred: ['Eggs', 'Vegan Butter']
   }]
 }
 

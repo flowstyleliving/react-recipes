@@ -4,13 +4,15 @@ class RecipeInput extends Component {
   constructor(props, context) {
     super(props, context)
     this.state = {
-      inputText: ''
-    }
+        inputText: ''
+      }
   }
 
   handleChange(event) {
     this.setState({
-      inputText: event.target.value
+      inputText: event.target.value,
+      // inputText1: event.target.value,
+      // inputText2: event.target.value,
     })
   }
 
@@ -29,6 +31,12 @@ class RecipeInput extends Component {
           value={this.state.inputText}
           onChange={this.handleChange.bind(this)}
         />
+        {/*<input
+          this="text"
+          placeholder="Describe it!"
+          value={this.state.input.inputText1}
+          onChange={this.handleChange.bind(this, 'inputText1')}
+        />*/}
         <input type="submit" text="Submit"/>
       </form>
       </div>

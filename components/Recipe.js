@@ -5,8 +5,8 @@ class Recipe extends Component {
     return(
       <li>
         <p>{this.props.recipe.title}</p>
-        <p>{this.props.recipe.text}</p>
-        <p>{this.props.recipe.ingredients}</p>
+        <p>{this.props.recipe.descript}</p>
+        <p>{this.props.recipe.ingred}</p>
       </li>
     )
   }
