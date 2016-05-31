@@ -9,7 +9,9 @@ import configureStore from '../redux/store'
 let initialState = {
   recipes: [{
     id: 0,
+    pic: 'pic goes here',
     title: 'Omelette',
+    text: 'Breakfast classic',
     ingredients: ['Eggs', 'Vegan Butter']
   }]
 }

@@ -1,4 +1,4 @@
-// General Manager
+// Corporate
 
 import { applyMiddleware, compose, createStore } from 'redux'
 import rootReducer from '../reducers'
