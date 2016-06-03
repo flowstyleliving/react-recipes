@@ -5,6 +5,17 @@ import { render } from 'react-dom'
 import { Provider } from 'react-redux'
 import App from '../components/App'
 import configureStore from '../redux/store'
+import { connect } from 'react-redux'
+import { firebase, helps } from 'redux-react-firebase'
+
+firebase([
+  'recipes'
+])
+connect(
+  ({firebase}) => ({
+    recipes: dataToJS(firebase, 'recipes'),
+  })
+)
 
 let initialState = {
   recipes: [{

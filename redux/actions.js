@@ -1,16 +1,25 @@
 // General Manager
 
-// import Firebase from 'firebase'
-//
-// const Posts = new Firebase("https://reactrecipes-2381a.firebaseio.com/")
+import C from '../constants'
+import Firebase from 'firebase'
+
+const recipesRef = new Firebase(C.FIREBASE_URI).child('recipes')
+
+export const listentToRecipes = () => {
+  return (dispatch) => {
+    recipesRef.on('value', (snapshot) => {
+      dispatch({ type, data })
+    })
+  }
+}
 
 let actions = {
-  addRecipe: (title, descript, ingred) => {
+  addRecipe: (title) => {
     return {
       type: 'ADD_RECIPE',
-      title: title,
-      descript: descript,
-      ingred: ingred
+      title: title
+      // descript: descript,
+      // ingred: ingred
     }
   }
 }
