@@ -7,13 +7,15 @@ function getId(todos) {
 let recipeReducer = function(recipes = [], action){
   switch(action.type) {
     case 'ADD_RECIPE':
-      return [{
-        title: action.title,
-        // descript: action.descript,
-        // ingred: action.ingred,
-        id: getId(recipes)
-      },
-        ...recipes]
+      return Object.assign({}, state,
+        [{
+          title: action.title,
+          // descript: action.descript,
+          // ingred: action.ingred,
+          id: getId(recipes)
+        },
+          ...recipes]
+      )
     default:
       return recipes
   }

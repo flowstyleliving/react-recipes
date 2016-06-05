@@ -4,10 +4,16 @@ var path = require('path')
 var config = require('../webpack.config')
 var wDM = require('webpack-dev-middleware')
 var wHM = require('webpack-hot-middleware')
+// var mongoose = require('mongoose')
 
 var app = express()
 
 var compiler = webpack(config)
+
+// mongoose.connect('mongodb://localhost/reactrecipes', (err) => {
+//   if(err) console.log(err)
+//   else console.log('Connected to mongodb://localhost/reactrecipes')
+// })
 
 app.use(wDM(compiler, {noInfo: true, publicPath: config.output.publicPath}))
 app.use(wHM(compiler))
