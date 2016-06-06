@@ -8,7 +8,7 @@ var mongoose = require('mongoose')
 
 var app = express()
 
-require('./models/Recipe')
+require('../models/Recipe')
 
 var compiler = webpack(config)
 

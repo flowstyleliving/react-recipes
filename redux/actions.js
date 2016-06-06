@@ -1,12 +1,23 @@
 // General Manager
+import request from 'axios'
+
+const BACKEND_URL = '/api/recipes';
 
 let actions = {
-  addRecipe: (title) => {
+  getRecipes: (id) => {
+    return{
+      // type: ['GET_RECIPES', 'GET_RECIPES_SUCCESS', 'GET_RECIPES_FAILURE']
+      type: 'GET_RECIPES',
+      promise: request.get(BACKEND_URL + '/' + id)
+    }
+  },
+  addRecipe: (recipeParams) => {
     return {
+      // type: ['ADD_RECIPE', 'ADD_RECIPE_SUCCESS', 'ADD_RECIPE_FAILURE']
       type: 'ADD_RECIPE',
-      title: title
-      // descript: descript,
-      // ingred: ingred
+      promise: request.post(BACKEND_URL, {
+        recipeParams: recipeParams,
+      })
     }
   }
 }

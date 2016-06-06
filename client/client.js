@@ -6,7 +6,7 @@ import { Provider } from 'react-redux'
 import App from '../components/App'
 import configureStore from '../redux/store'
 import { connect } from 'react-redux'
-import { firebase, helps } from 'redux-react-firebase'
+// import { firebase, helps } from 'redux-react-firebase'
 
 let initialState = {
   recipes: [{
