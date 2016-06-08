@@ -13,7 +13,7 @@ class App extends Component {
     return(
       <div>
         <h1>This is my recipe App</h1>
-        <RecipeInput addRecipe={this.props.actions.addRecipe}/>
+        <RecipeInput actions={this.props.actions}/>
         <RecipeList actions={this.props.actions} recipes={this.props.recipes}/>
       </div>
     )

@@ -11,7 +11,9 @@ let actions = {
       promise: request.get(BACKEND_URL + '/' + id)
     }
   },
-  addRecipe: (recipeParams) => {
+  makeRecipe: (recipeParams) => {
+    console.log('hi')
+    
     return {
       // type: ['ADD_RECIPE', 'ADD_RECIPE_SUCCESS', 'ADD_RECIPE_FAILURE']
       type: 'ADD_RECIPE',
