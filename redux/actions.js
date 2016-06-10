@@ -12,14 +12,13 @@ let actions = {
     }
   },
   makeRecipe: (recipeParams) => {
-    console.log('hi')
-    
     return {
       // type: ['ADD_RECIPE', 'ADD_RECIPE_SUCCESS', 'ADD_RECIPE_FAILURE']
       type: 'ADD_RECIPE',
-      promise: request.post(BACKEND_URL, {
-        recipeParams: recipeParams,
-      })
+      title: recipeParams
+      // promise: request.post(BACKEND_URL, {
+      //   recipeParams: recipeParams,
+      // })
     }
   }
 }

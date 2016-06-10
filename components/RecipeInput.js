@@ -6,18 +6,16 @@ class RecipeInput extends Component {
     super(props, context)
     this.state = {
         title: '',
-        descript: '',
-        ingred: ''
+        // descript: '',
+        // ingred: ''
     }
   }
 
-
-
   handleChange(event) {
     let newState = {
-      title: event.target.elements[0].value,
-      descript: event.target.elements[1].value,
-      ingred: event.target.elements[2].value
+      title: event.target.value,
+      // descript: event.target.elements[1].value,
+      // ingred: event.target.elements[2].value
     }
     this.setState(newState)
   }
@@ -27,21 +25,19 @@ class RecipeInput extends Component {
 
         // let errors = [];
         console.log('hihihi')
-        // let recipeParams = {
-        //     id: this.props.id,
-        //     title: this.state.title,
-        //     descript: this.state.descript,
-        //     ingred: this.state.ingred
-        // }
+        let recipeParams = {
+            // id: this.props.id,
+            title: this.state.title
+            // descript: this.state.descript,
+            // ingred: this.state.ingred
+        }
+
       this.props.actions.makeRecipe(recipeParams)
-        .then(status => {
-          console.log('hihi')
-            recipeParams.id = this.props.id
-            recipeParams.title = this.state.title
-            recipeParams.descript = this.state.descript
-            recipeParams.ingred = this.state.ingred
-          }
-        )
+      console.log('hihi')
+      // recipeParams.id = this.props.id
+      recipeParams.title = this.state.title
+      // recipeParams.descript = this.state.descript
+      // recipeParams.ingred = this.state.ingred
       }
 
   render() {
@@ -55,7 +51,7 @@ class RecipeInput extends Component {
           type="text"
           placeholder="What's your recipe for?"
           value={this.state.title}
-          onChange={this.handleChange.bind(this, 'title')}
+          onChange={this.handleChange.bind(this)}
         />{' '}
         <input
           type="text"
@@ -71,6 +67,7 @@ class RecipeInput extends Component {
         />{' '}
         <input type="submit" text="Submit"/>
       </form>
+      {this.state.title}
       </div>
     )
   }
