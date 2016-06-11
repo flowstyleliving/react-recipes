@@ -5,9 +5,9 @@ class RecipeInput extends Component {
   constructor(props, context) {
     super(props, context)
     this.state = {
-        title: 'whoa',
-        descript: 'this shit hot like ice',
-        // ingred: ''
+        title: '',
+        descript: '',
+        ingred: ''
     }
   }
 
@@ -15,8 +15,7 @@ class RecipeInput extends Component {
     let newState = {}
     newState[name] = event.target.value
     this.setState(newState)
-    console.log(this.state)
-    
+    // console.log(this.state)
   }
 
   handleSubmit(event) {
@@ -25,24 +24,22 @@ class RecipeInput extends Component {
         // let errors = [];
         console.log(this.state)
         let recipeParams = {
-            // id: this.props.id,
+            id: this.props.id,
             title: this.state.title,
             descript: this.state.descript,
-            // ingred: this.state.ingred
+            ingred: this.state.ingred
         }
+        console.log('this',recipeParams)
 
       this.props.actions.makeRecipe(recipeParams)
         // recipeParams.id = this.props.id
-        recipeParams.title = this.state.title
-        recipeParams.descript = this.state.descript
+        // recipeParams.title = this.state.title
+        // recipeParams.descript = this.state.descript
         // recipeParams.ingred = this.state.ingred
-
 
       }
 
   render() {
-    // console.log(JSON.strinify(this.getFormData(), null, 2))
-
     return(
       <div>
       <canvas type='food.get'></canvas>

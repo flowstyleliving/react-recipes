@@ -26,7 +26,7 @@ router.get('/recipes/:id', (req, res) => {
 // makeRecipe()
 router.post('/recipes', (req, res) => {
   let newRecipe = new Recipe(req.body.recipeParams);
-  console.log(req.body.recipeParams)
+  console.log('we made it', req.body.recipeParams)
   let id = req.body.recipeParams.id;
 
     newRecipe.save(function(err) {
