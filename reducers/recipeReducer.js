@@ -19,7 +19,7 @@ let recipeReducer = function(state = defaultState, action){
   // let collection = state.get('collection');
   switch(action.type) {
     case 'ADD_RECIPE':
-      // console.log(action.promise.recipeParams)
+      console.log(action.promise)
       let addedCollection = collection.push(action.res.data)
       return recipes.set('collection', addedCollection)
       // return [{

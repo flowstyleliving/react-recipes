@@ -15,7 +15,7 @@ class RecipeInput extends Component {
     let newState = {}
     newState[name] = event.target.value
     this.setState(newState)
-    // console.log(this.state)
+    console.log(this.state)
   }
 
   handleSubmit(event) {
@@ -64,7 +64,6 @@ class RecipeInput extends Component {
         />{' '}
         <input type="submit" text="Submit"/>
       </form>
-      {this.state.title}
       </div>
     )
   }

@@ -36,3 +36,11 @@ router.post('/recipes', (req, res) => {
         res.json(newRecipe);
       }
 })
+
+// deleteRecipe()
+router.delete('/recipes/:id', (req, res) => {
+  Recipe.findByIdAndRemove(id, (err) => {
+    if(err) res.status(400).send(err);
+    else res.status(200).send('successful!');
+  })
+})
