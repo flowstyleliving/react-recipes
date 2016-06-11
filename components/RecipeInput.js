@@ -6,15 +6,15 @@ class RecipeInput extends Component {
     super(props, context)
     this.state = {
         title: '',
-        // descript: '',
+        descript: '',
         // ingred: ''
     }
   }
 
   handleChange(event) {
     let newState = {
-      title: event.target.value,
-      // descript: event.target.elements[1].value,
+      title: event.target.title,
+      descript: event.target.descript,
       // ingred: event.target.elements[2].value
     }
     this.setState(newState)
@@ -27,8 +27,8 @@ class RecipeInput extends Component {
         console.log('hihihi')
         let recipeParams = {
             // id: this.props.id,
-            title: this.state.title
-            // descript: this.state.descript,
+            title: this.state.title,
+            descript: this.state.descript,
             // ingred: this.state.ingred
         }
 
@@ -36,7 +36,7 @@ class RecipeInput extends Component {
       console.log('hihi')
       // recipeParams.id = this.props.id
       recipeParams.title = this.state.title
-      // recipeParams.descript = this.state.descript
+      recipeParams.descript = this.state.descript
       // recipeParams.ingred = this.state.ingred
       }
 
@@ -57,7 +57,7 @@ class RecipeInput extends Component {
           type="text"
           placeholder="Describe it!"
           value={this.state.descript}
-          onChange={this.handleChange.bind(this, 'descript')}
+          onChange={this.handleChange.bind(this)}
         />{' '}
         <input
           type="text"

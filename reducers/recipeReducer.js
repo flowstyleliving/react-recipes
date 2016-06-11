@@ -1,12 +1,9 @@
 import Immutable from 'immutable'
 
-const options = {
-  loaded: false,
-  collection: new Immutable.List(),
-  err: null,
-}
 
-let defaultState = new Immutable.Map(options);
+let defaultState = new Immutable.Map({
+  title: 'hi'
+});
 
 function getId(todos) {
   return todos.reduce((maxId, todo) => {
@@ -15,13 +12,16 @@ function getId(todos) {
 }
 
 let recipeReducer = function(recipes = [], action){
-  let collection = state.get('collection');
+  // let collection = state.get('collection');
   switch(action.type) {
     case 'ADD_RECIPE':
+      console.log(action.promise.recipeParams)
+      // let addedCollection = collection.push(action.res.data)
+      // return recipes.set('title')
       return [{
-          title: action.title,
-          descript: action.descript,
-          ingred: action.ingred,
+          title: action.recipeParams.title,
+          descript: action.recipeParams.descript,
+          ingred: action.recipeParams.ingred,
           id: getId(recipes)
         }, ...recipes]
     // case 'ADD_RECIPE_SUCCESS':

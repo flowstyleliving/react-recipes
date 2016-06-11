@@ -17,7 +17,7 @@ let actions = {
             type: 'ADD_RECIPE',
             // title: recipeParams
             promise: request.post(BACKEND_URL, {
-                    recipeParams: recipeParams.id,
+                    recipeParams: recipeParams,
                 })
                 .then((response) => {
                     console.log(response, 'got here')
