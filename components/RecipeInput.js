@@ -5,26 +5,25 @@ class RecipeInput extends Component {
   constructor(props, context) {
     super(props, context)
     this.state = {
-        title: '',
-        descript: '',
+        title: 'whoa',
+        descript: 'this shit hot like ice',
         // ingred: ''
     }
   }
 
-  handleChange(event) {
-    let newState = {
-      title: event.target.title,
-      descript: event.target.descript,
-      // ingred: event.target.elements[2].value
-    }
+  handleChange(name, event) {
+    let newState = {}
+    newState[name] = event.target.value
     this.setState(newState)
+    console.log(this.state)
+    
   }
 
   handleSubmit(event) {
       event.preventDefault();
 
         // let errors = [];
-        console.log('hihihi')
+        console.log(this.state)
         let recipeParams = {
             // id: this.props.id,
             title: this.state.title,
@@ -33,11 +32,12 @@ class RecipeInput extends Component {
         }
 
       this.props.actions.makeRecipe(recipeParams)
-      console.log('hihi')
-      // recipeParams.id = this.props.id
-      recipeParams.title = this.state.title
-      recipeParams.descript = this.state.descript
-      // recipeParams.ingred = this.state.ingred
+        // recipeParams.id = this.props.id
+        recipeParams.title = this.state.title
+        recipeParams.descript = this.state.descript
+        // recipeParams.ingred = this.state.ingred
+
+
       }
 
   render() {
@@ -51,13 +51,13 @@ class RecipeInput extends Component {
           type="text"
           placeholder="What's your recipe for?"
           value={this.state.title}
-          onChange={this.handleChange.bind(this)}
+          onChange={this.handleChange.bind(this, 'title')}
         />{' '}
         <input
           type="text"
           placeholder="Describe it!"
           value={this.state.descript}
-          onChange={this.handleChange.bind(this)}
+          onChange={this.handleChange.bind(this, 'descript')}
         />{' '}
         <input
           type="text"
