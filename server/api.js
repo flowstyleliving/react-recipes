@@ -16,8 +16,8 @@ router.get('/', (req, res) => {
 
  // getRecipes()
 router.get('/recipes/:id', (req, res) => {
-  let recipe.id = req.params.id;
-  Recipe.find({_id: id}, (err, recipes) => {
+  let recipeId = req.params.id;
+  Recipe.find({_id: recipeId}, (err, recipes) => {
     if(err) res.status(400).send("Sorry couldn't process that request.")
     else res.json(recipes)
   })
@@ -35,6 +35,7 @@ router.post('/recipes', (req, res) => {
       } else {
         res.json(newRecipe);
       }
+  })
 })
 
 // deleteRecipe()
@@ -44,3 +45,5 @@ router.delete('/recipes/:id', (req, res) => {
     else res.status(200).send('successful!');
   })
 })
+
+module.exports = api

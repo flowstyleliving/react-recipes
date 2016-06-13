@@ -1,5 +1,5 @@
 // General Manager
-import request from 'axios'
+var request = require('../server/api')
 
 const BACKEND_URL = '/api/recipes';
 
