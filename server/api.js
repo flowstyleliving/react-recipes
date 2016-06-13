@@ -46,4 +46,4 @@ router.delete('/recipes/:id', (req, res) => {
   })
 })
 
-module.exports = api
+export default api

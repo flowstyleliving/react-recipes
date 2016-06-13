@@ -1,5 +1,5 @@
 // General Manager
-var request = require('../server/api')
+var request = require('axios')
 
 const BACKEND_URL = '/api/recipes';
 
@@ -16,6 +16,7 @@ let actions = {
             // type: ['ADD_RECIPE', 'ADD_RECIPE_SUCCESS', 'ADD_RECIPE_FAILURE']
             type: 'ADD_RECIPE',
             // title: recipeParams
+            // console.log('rp',recipeParams)
             promise: request.post(BACKEND_URL, {
                     recipeParams: recipeParams,
                 })

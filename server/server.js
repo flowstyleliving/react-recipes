@@ -22,6 +22,7 @@ app.use(wHM(compiler))
 
 app.use(express.static('./dist'))
 
+
 app.use('/', function(req, res) {
   res.sendFile(path.resolve('client/index.html'))
 })

@@ -15,24 +15,20 @@ function getId(todos) {
   }, -1) + 1
 }
 
-let recipeReducer = function(state = defaultState, action){
-  // let collection = state.get('collection');
+let recipeReducer = function(recipes = defaultState, action){
   switch(action.type) {
     case 'ADD_RECIPE':
-      console.log(action.promise)
-      let addedCollection = collection.push(action.res.data)
-      return recipes.set('collection', addedCollection)
-      // return [{
-      //     title: action.recipeParams.title,
-      //     descript: action.recipeParams.descript,
-      //     ingred: action.recipeParams.ingred,
-      //     id: getId(recipes)
-      //   }, ...recipes]
+      return [{
+          title: 'oh',
+          descript: 'kay',
+          ingred: 'action.recipeParams.ingred',
+          id: getId(recipes)
+        }, ...recipes]
     // case 'ADD_RECIPE_SUCCESS':
     //   return state.set('loading', true)
     default:
-      return state
-  }
+      return recipes
+    }
 }
 
 export default recipeReducer

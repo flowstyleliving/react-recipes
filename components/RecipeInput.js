@@ -29,7 +29,7 @@ class RecipeInput extends Component {
             descript: this.state.descript,
             ingred: this.state.ingred
         }
-        console.log('this',recipeParams)
+        // console.log('this',recipeParams)
 
       this.props.actions.makeRecipe(recipeParams)
         // recipeParams.id = this.props.id
