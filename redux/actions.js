@@ -1,6 +1,5 @@
 // General Manager
 var request = require('axios')
-
 const BACKEND_URL = '/api/recipes';
 
 let actions = {

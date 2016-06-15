@@ -42,7 +42,6 @@ class RecipeInput extends Component {
   render() {
     return(
       <div>
-      <canvas type='food.get'></canvas>
       <form onSubmit={this.handleSubmit.bind(this)}>
         <input
           type="text"

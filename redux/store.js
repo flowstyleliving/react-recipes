@@ -4,6 +4,8 @@ import { applyMiddleware, compose, createStore } from 'redux'
 import rootReducer from '../reducers'
 import logger from 'redux-logger'
 import thunk from 'redux-thunk'
+// import pMD from '../utils/promiseMiddleware'
+
 // import { reduxReactFirebase, firebaseStateReducer } from 'redux-react-firebase'
 
 

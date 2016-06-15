@@ -1,14 +1,21 @@
 <!DOCTYPE html>
 <html>
-  <head>
+
+<head>
     <meta charset="utf-8">
     <title>React Recipes</title>
-  </head>
-  <body>
+</head>
+
+<body>
     <div id="App"></div>
+    <span id="food_title"></span>
+    <div id="nutrition_panel"></div>
     <script src="bundle.js"></script>
     <script src="http://platform.fatsecret.com/js?key=e8ce01e59cee4371aa05832da65a4cdb&auto_load=true"></script>
     <script>
-</script>
-  </body>
+        fatsecret.addRef("foodtitle", "food_title");
+        fatsecret.addRef("nutritionpanel", "nutrition_panel");
+    </script>
+</body>
+
 </html>

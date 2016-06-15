@@ -1,21 +1,10 @@
-import Immutable from 'immutable'
-
-
-let options = new Immutable.Map({
-  loaded: false,
-  collection: new Immutable.List(),
-  err: null,
-});
-
-let defaultState = new Immutable.Map(options);
-
 function getId(todos) {
   return todos.reduce((maxId, todo) => {
     return Math.max(todo.id, maxId)
   }, -1) + 1
 }
 
-let recipeReducer = function(recipes = defaultState, action){
+let recipeReducer = function(recipes = [], action){
   switch(action.type) {
     case 'ADD_RECIPE':
       return [{
