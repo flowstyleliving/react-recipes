@@ -1,10 +1,10 @@
-import mongoose from 'mongoose'
-import express from 'express'
-import Recipe from '../models/Recipe'
+var mongoose = require('mongoose');
+var express = require('express');
+var Recipe = require('../models/Recipe');
 
 
-let router = express.Router();
-
+var router = express.Router();
+console.log("ok")
 // Start //
 router.get('/', (req, res) => {
   res.json({
@@ -47,4 +47,4 @@ router.delete('/recipes/:id', (req, res) => {
   })
 })
 
-export default   api
+module.exports =    router;

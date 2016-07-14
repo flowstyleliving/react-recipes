@@ -11,6 +11,7 @@ let actions = {
         }
     },
     makeRecipe: (recipeParams) => {
+      console.log("hello!" + BACKEND_URL);
         return {
             // type: ['ADD_RECIPE', 'ADD_RECIPE_SUCCESS', 'ADD_RECIPE_FAILURE']
             type: 'ADD_RECIPE',

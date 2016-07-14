@@ -19,13 +19,17 @@ mongoose.connect('mongodb://localhost/reactrecipes', (err) => {
 
 app.use(wDM(compiler, {noInfo: true, publicPath: config.output.publicPath}))
 app.use(wHM(compiler))
-
+app.use(require("body-parser").json({
+  extended:true
+}));
 app.use(express.static('./dist'))
 
 
-app.use('/', function(req, res) {
+app.get('/', function(req, res) {
   res.sendFile(path.resolve('client/index.html'))
 })
+
+app.use("/api", require("./api"))
 
 var port = 8080
 

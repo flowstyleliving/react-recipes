@@ -1,3 +1,5 @@
+
+
 function getId(todos) {
   return todos.reduce((maxId, todo) => {
     return Math.max(todo.id, maxId)
@@ -7,10 +9,11 @@ function getId(todos) {
 let recipeReducer = function(recipes = [], action){
   switch(action.type) {
     case 'ADD_RECIPE':
+      console.log(this)
       return [{
           title: 'oh',
           descript: 'kay',
-          ingred: 'action.recipeParams.ingred',
+          ingred: action.recipeParams.ingred,
           id: getId(recipes)
         }, ...recipes]
     // case 'ADD_RECIPE_SUCCESS':
